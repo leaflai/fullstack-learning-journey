@@ -1,5 +1,7 @@
 <script setup>
   import { ref } from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+import axios from 'axios';
 
   const inputValue = ref('')
   const list = ref([{
@@ -10,7 +12,7 @@
   function add(){
     list.value.push({
       isComplete:false,
-      text:inputValue.value      
+      text:inputValue.value
     });
     inputValue.value = "";
   }
@@ -38,6 +40,7 @@
             <div @click ="del(index)" class="del">del</div>
         </div>
     </div>
+    <HelloWorld msg="ttt"></HelloWorld>
 </template>
 
 <style scoped>
